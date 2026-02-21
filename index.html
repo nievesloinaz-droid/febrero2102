@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win or Loss - Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Prueba tu Suerte</h1>
+            <p>Elige un color y descubre si has ganado.</p>
+        </header>
+
+        <main class="game-area">
+            <div class="button-container">
+                <button id="redBtn" class="game-btn red-btn">
+                    <span class="btn-text">ROJO</span>
+                    <div class="btn-glow"></div>
+                </button>
+                <button id="blueBtn" class="game-btn blue-btn">
+                    <span class="btn-text">AZUL</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div class="result-card">
+                    <h2 id="resultTitle">¡Resultado!</h2>
+                    <p id="resultMessage"></p>
+                    <button id="resetBtn" class="reset-btn">Jugar de nuevo</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Diseño Premium por Antigravity</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+a

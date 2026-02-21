@@ -1,0 +1,194 @@
+:root {
+    --bg-color: #0a0a0c;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --red-primary: #ff3b3b;
+    --red-glow: rgba(255, 59, 59, 0.4);
+    --blue-primary: #3b82f6;
+    --blue-glow: rgba(59, 130, 246, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --win-color: #00e676;
+    --loss-color: #ff5252;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    text-align: center;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.game-btn {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.btn-text {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.red-btn {
+    color: var(--red-primary);
+}
+
+.red-btn:hover {
+    box-shadow: 0 0 30px var(--red-glow);
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255, 59, 59, 0.1);
+}
+
+.blue-btn {
+    color: var(--blue-primary);
+}
+
+.blue-btn:hover {
+    box-shadow: 0 0 30px var(--blue-glow);
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.btn-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.red-btn:hover .btn-glow {
+    background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%);
+    opacity: 0.5;
+}
+
+.blue-btn:hover .btn-glow {
+    background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+    opacity: 0.5;
+}
+
+.result-container {
+    margin-top: 2rem;
+    transition: all 0.5s ease;
+}
+
+.result-container.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.result-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem;
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.result-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-card p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.win h2 { color: var(--win-color); }
+.win .result-card { border-color: rgba(0, 230, 118, 0.3); }
+
+.loss h2 { color: var(--loss-color); }
+.loss .result-card { border-color: rgba(255, 82, 82, 0.3); }
+
+.reset-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.reset-btn:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+footer {
+    margin-top: 4rem;
+    opacity: 0.3;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    header h1 {
+        font-size: 2.2rem;
+    }
+}
